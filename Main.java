@@ -11,8 +11,8 @@ public class Main{
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Delivery mode (ROAD/SEA): ");
-        String mode = sc.nextLine();
+        System.out.print("Delivery mode (ROAD or SEA): ");
+        String mode = sc.nextLine().toUpperCase();
         if (mode.isEmpty()){
             System.out.println("Delivery mode is not entered.");
             return;
@@ -30,8 +30,8 @@ public class Main{
                 return;
         }
 
-        System.out.print("UI platform (WINDOWS/MACOS): ");
-        String platform = sc.nextLine();
+        System.out.print("UI platform (WINDOWS or MACOS): ");
+        String platform = sc.nextLine().toUpperCase();
         if (platform.isEmpty()){
             System.out.println("UI platform is not entered.");
             return;
