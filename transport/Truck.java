@@ -1,7 +1,7 @@
 package transport;
 
 public class Truck implements Transport {
-    public void deliver() {
-        System.out.println("Truck delivers laboratory equipment to Aktau warehouse");
+    public void deliver(String cargo, String destination) {
+        System.out.println("Truck delivers" + cargo + " to " + desination);
     }
 }
