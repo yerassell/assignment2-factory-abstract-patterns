@@ -19,6 +19,6 @@ public class DeliveryApplication {
         button.paint();
         checkbox.paint();
 
-        logistics.planDelivery();
+        logistics.planDelivery("laboratory equipment", "Aktau warehouse");
     }
 }
