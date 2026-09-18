@@ -2,8 +2,8 @@ package transport;
 
 public abstract class Logistics {
     public abstract Transport createTransport();
-    public void planDelivery() {
+    public void planDelivery(String cargo, String destination) {
         Transport t = createTransport();
-        t.deliver();
+        t.deliver(cargo, destination);
     }
 }
