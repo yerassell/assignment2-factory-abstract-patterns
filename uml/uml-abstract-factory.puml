@@ -1,0 +1,57 @@
+@startuml
+skinparam classAttributeIconSize 0
+interface Button <<Abstract Product>>{
++paint()
+}
+interface Checkbox <<Abstract Product>>{
++paint()
+}
+class WindowsButton <<Concrete Product>>{
++paint()
+}
+class WindowsCheckbox <<Concrete Product>>{
++paint()
+}
+class MacOSButton <<Concrete Product>>{
++paint()
+}
+class MacOSCheckbox <<Concrete Product>>{
++paint()
+}
+interface GUIFactory <<Abstract Creator>>{
++createButton():Button
++createCheckbox():Checkbox
+}
+class WindowsFactory <<Concrete Creator>>{
++createButton():Button
++createCheckbox():Checkbox
+}
+class MacOSFactory <<Concrete Creator>>{
++createButton():Button
++createCheckbox():Checkbox
+}
+class DeliveryApplication <<Client>>{
+-factory: GUIFactory
+-logistics: Logistics
++DeliveryApplication(factory, logistics)
++start()
+}
+
+
+Button <|..WindowsButton: <<implements>> 
+Checkbox <|.. WindowsCheckbox: <<implements>> 
+Button <|..MacOSButton: <<implements>> 
+Checkbox <|.. MacOSCheckbox: <<implements>> 
+
+GUIFactory <|.. WindowsFactory: <<implements>>
+GUIFactory <|.. MacOSFactory: <<implements>>
+
+WindowsFactory ..> WindowsButton: <<creates>>
+WindowsFactory ..> WindowsCheckbox: <<creates>>
+MacOSFactory ..> MacOSButton: <<creates>>
+MacOSFactory ..> MacOSCheckbox: <<creates>>
+
+DeliveryApplication -->GUIFactory:<<uses>>
+DeliveryApplication ..>Button:<<uses>>
+DeliveryApplication ..>Checkbox:<<uses>>
+@enduml

@@ -1,0 +1,39 @@
+@startuml
+skinparam classAttributeIconSize 0
+interface Transport <<Product>>{
++deliver(cargo, destination)
+}
+class Truck <<Concrete Product>>{
++deliver(cargo, destination)
+}
+class Ship <<Concrete Product>>{
++deliver(cargo, destination)
+}
+abstract Logistics <<Creator>>{
++createTransport():Transport
++planDelivery(cargo,destination)
+}
+class RoadLogistics <<Concrete Creator>>{
++createTransport():Transport
+}
+class SeaLogistics <<Concrete Creator>>{
++createTransport():Transport
+}
+class DeliveryApplication <<Client>>{
+-factory: GUIFactory
+-logistics: Logistics
++DeliveryApplication(factory, logistics)
++start()
+}
+Transport <|.. Truck : <<implements>>
+Transport <|.. Ship: <<implements>>
+Logistics <|-- RoadLogistics: <<extends>>
+Logistics <|-- SeaLogistics: <<extends>>
+
+Logistics..>Transport: <<creates>>
+RoadLogistics..>Truck: <<creates>>
+SeaLogistics..>Ship: <<creates>>
+
+DeliveryApplication->Logistics:<<uses>>
+DeliveryApplication..>Transport:<<uses>>
+@enduml
