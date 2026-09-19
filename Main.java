@@ -12,9 +12,9 @@ public class Main{
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Delivery mode (ROAD or SEA): ");
-        String mode = sc.nextLine().toUpperCase();
+        String mode = sc.nextLine().trim().toUpperCase();
         if (mode.isEmpty()){
-            System.out.println("Delivery mode is not entered.");
+            System.out.println("Delivery mode is not entered. Stopping the process.");
             return;
         }
         Logistics logistics;
@@ -31,9 +31,9 @@ public class Main{
         }
 
         System.out.print("UI platform (WINDOWS or MACOS): ");
-        String platform = sc.nextLine().toUpperCase();
+        String platform = sc.nextLine().trim().toUpperCase();
         if (platform.isEmpty()){
-            System.out.println("UI platform is not entered.");
+            System.out.println("UI platform is not entered. Stopping the process.");
             return;
         }
 
