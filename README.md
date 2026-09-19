@@ -1,5 +1,5 @@
 # Assignment 2 Factory Method and Abstract Factory
-Commit: 579812b418b102fb1df2ada263d44b6c73a07f7b
+Commit: 3123003b9900f574f0b3cfbd853c0f5a7b4ec3f4
 
 ## Project purpose
 A logistics application that supports road and sea delivery and can use Windows or macOS UI components.
